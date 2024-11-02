@@ -1,0 +1,35 @@
+cloudwatch: 
+#Defination:
+to watch all activity per sec of your server is it accessible. If it is not accessible it will send alert via sns, cloud watch work is to watch if server accessible or not.
+if traffic is more we will add load balancer means scaling of cpu. so we will get notify about that also.
+monitor all the resources. and monitor unwanted activity like cpu utilisation is high, memory is less, network traffice is more etc. 
+
+ We can use defalt dashboard too.
+Steps: search cloudwatch -> dashboard -> automatic dashboard
+
+1.  namespace & Metrics:
+namespace measn category such as EBS, EC2, S3
+Steps:cloudwatch -> metrics -> all metrics -> u can see total metrics -> if u click on namespace -> all metrics are listed  like cpu network etc -> you can select and check metrics via graphs
+
+you can make custom metrics and namespace too.
+
+2. detailed monitoring of instances:
+EC2-> instances-> selct running instances-> monitoring->detailed monitoring->enable->confirm
+
+3. how to create dashboard:
+dashboard->create dashboard->add heading->select metrics->save ->to add more metrics click on + -> u can shre it also-> u can set username password that person will get notification on mail.
+
+4. Triggered Alarm:
+alram->select resource -> ,etric -> create alarm -> set period -> set threshold -> set name -> set email or SNS -> save
+go to alarm and check newly crated alarm.
+
+go to instaces -> select one -> connect -> if u want to increase cpu utilisation -> ssh type command -> top -> u can see spu utilization, us means user space -> slipts the screen  yes neha > /dev/null & 
+
+go to instances-> select -> monitoring -> u can see -> u can check in alarm section if it breaches it will show "in alrm" -> will send mail to you
+
+5. How to create Biling Alarm:
+If your budget is fixed to use aws services we can use biling alarm to notify us that this much amount is left.
+alarm -> billing -> set alarm -> amount -> name -> send to usename -> save
+
+6. how to create composite alarm:
+alarm-> select 2 or more alarm -> create composite alarm -> set permission AND OR -> save
